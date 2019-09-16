@@ -1,19 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.less';
-import NotFound from './pages/not-found';
-import Login from './pages/user/login';
-import BaseLayout from './layouts/BaseLayout';
+import Login from './pages/User/Login';
+import Layout from './layout';
 
 const App: React.FC = () => (
-  <Router>
+  <BrowserRouter>
     <Switch>
-      <Route path="/" component={BaseLayout} />
-      <Route path="/login" component={Login} />
-      <Route path="/404" component={NotFound} />
-      <Route component={NotFound} />
+      <Route exact path="/login" component={Login} />
+      <Route path="/" component={Layout} />
     </Switch>
-  </Router>
+  </BrowserRouter>
 );
 
 export default App as any;

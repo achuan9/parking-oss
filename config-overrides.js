@@ -1,4 +1,5 @@
-const { override, fixBabelImports, addLessLoader } = require('customize-cra');
+const { override, fixBabelImports, addLessLoader, addWebpackAlias } = require('customize-cra');
+const path = require('path');
 
 module.exports = override(
   fixBabelImports('import', {
@@ -8,6 +9,18 @@ module.exports = override(
   }),
   addLessLoader({
     javascriptEnabled: true,
-    modifyVars: { '@primary-color': '#1DA57A' },
+    modifyVars: { 
+      '@menu-dark-bg': '#1792f5',
+      '@menu-dark-submenu-bg': '#1792f5',
+      '@menu-dark-item-color': '#90cdff',
+      '@menu-dark-highlight-color': '#ffffff',
+      '@menu-dark-item-active-bg': '#007add',
+      '@layout-sider-background': '#1792f5'
+    },
+  }),
+  addWebpackAlias({
+    ['@']: path.resolve(__dirname, 'src'),
+    ['pages']: path.resolve(__dirname, 'src/pages'),
+    ['components']: path.resolve(__dirname, 'src/components'),
   }),
 );
