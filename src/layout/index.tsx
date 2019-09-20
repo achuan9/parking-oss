@@ -5,10 +5,10 @@ import { IBaseLayoutProps, IBaseLayoutState } from './index.interface';
 import { BaseMenu } from './Menu';
 import BaseHeader from './Header';
 import { BaseRoute } from '../router';
-import { ROUTES } from 'router/routes';
-import './index.less';
+import { ROUTES } from '../router/routes';
+import './index.css';
 
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 
 class PageLayout extends React.PureComponent<IBaseLayoutProps, IBaseLayoutState> {
   static defaultProps = {};

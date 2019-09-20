@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.less';
+import 'antd/dist/antd.css';
+import './App.css';
 import Login from './pages/User/Login';
 import Layout from './layout';
 

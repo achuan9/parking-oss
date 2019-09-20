@@ -1,17 +1,17 @@
 import { lazy } from 'react';
 import { IRoute } from "./index.interface";
 
-import Dashboard from 'pages/Dashboard';
+import Dashboard from '../pages/Dashboard';
 
 // // 设备管理
-const DeviceHotel = lazy(() => import('pages/Device/Hotel'))
-const DevicePark = lazy(() => import('pages/Device/Park'))
-const DeviceRecharge = lazy(() => import('pages/Device/Recharge'))
+const DeviceHotel = lazy(() => import('../pages/Device/Hotel'))
+const DevicePark = lazy(() => import('../pages/Device/Park'))
+const DeviceRecharge = lazy(() => import('../pages/Device/Recharge'))
 
 // // 账户管理
-const AccountHotel = lazy(() => import('pages/Account/Hotel'))
-const AccountDriver = lazy(() => import('pages/Account/Driver'))
-const AccountCompany = lazy(() => import('pages/Account/Company'))
+const AccountHotel = lazy(() => import('../pages/Account/Hotel'))
+const AccountDriver = lazy(() => import('../pages/Account/Driver'))
+const AccountCompany = lazy(() => import('../pages/Account/Company'))
 
 export const ROUTES: IRoute[] = [
   {
@@ -72,17 +72,17 @@ export const ROUTES: IRoute[] = [
       {
         path: '/vehicle/month',
         title: '月卡车',
-        component: lazy(() => import('pages/Vehicle/Month')),
+        component: lazy(() => import('../pages/Vehicle/Month')),
       },
       {
         path: '/vehicle/VIP',
         title: 'VIP车',
-        component: lazy(() => import('pages/Vehicle/VIP')),
+        component: lazy(() => import('../pages/Vehicle/VIP')),
       },
       {
         path: '/vehicle/Free',
         title: '免费车',
-        component: lazy(() => import('pages/Vehicle/Free')),
+        component: lazy(() => import('../pages/Vehicle/Free')),
       }
     ],
   },
@@ -94,39 +94,39 @@ export const ROUTES: IRoute[] = [
       {
         path: '/Card/mend',
         title: '补卡',
-        component: lazy(() => import('pages/Card/Mend')),
+        component: lazy(() => import('../pages/Card/Mend')),
       },
       {
         path: '/Card/publishPerson',
         title: '个人发卡',
-        component: lazy(() => import('pages/Card/PublishPerson')),
+        component: lazy(() => import('../pages/Card/PublishPerson')),
       },
       {
         path: '/Card/PublishCompany',
         title: '企业发卡',
-        component: lazy(() => import('pages/Card/PublishCompany')),
+        component: lazy(() => import('../pages/Card/PublishCompany')),
       },
       
       {
         path: '/Card/liftedLose',
         title: '解除挂失',
-        component: lazy(() => import('pages/Card/LiftedLose')),
+        component: lazy(() => import('../pages/Card/LiftedLose')),
       },
       {
 
         path: '/Card/Recycle',
         title: '卡片回收',
-        component: lazy(() => import('pages/Card/Recycle')),
+        component: lazy(() => import('../pages/Card/Recycle')),
       },
       {
         path: '/Card/Search',
         title: '发卡用户查询',
-        component: lazy(() => import('pages/Card/Search')),
+        component: lazy(() => import('../pages/Card/Search')),
       },
       {
         path: '/Card/Plugin',
         title: '发卡插件下载',
-        component: lazy(() => import('pages/Card/Plugin')),
+        component: lazy(() => import('../pages/Card/Plugin')),
       }
       
     ],

@@ -67,7 +67,7 @@ const requestFail = (res: AxiosResponse) => {
   let errStr = '网络繁忙！';
   // token失效重新登陆
   if (res.data.code === 1000001) {
-    return router.replace({ name: 'login' });
+    // return router.replace({ name: 'login' });
   }
 
   return {
@@ -78,4 +78,6 @@ const requestFail = (res: AxiosResponse) => {
   };
 };
 
-export default request;
+export default function (params:object) {
+  return 'success'
+}

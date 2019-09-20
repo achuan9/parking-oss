@@ -10,7 +10,7 @@ yarn create react-app my-app --typescript
   }
 ```
 
-安装 eslint 扩展，添加 `.eslintrc.js` `.eslintignore`
+添加 `.eslintrc.js` `.eslintignore`
 
 ```js
 module.exports = {
@@ -20,8 +20,7 @@ module.exports = {
 };
 ```
 
-```t
-/scripts
+```js
 /config
 ```
 
@@ -33,15 +32,7 @@ module.exports = {
   singleQuote: true,
   trailingComma: "all",
   printWidth: 100,
-  proseWrap: "never",
-  overrides: [
-    {
-      files: ".prettierrc",
-      options: {
-        parser: "json"
-      }
-    }
-  ]
+  proseWrap: "never"
 };
 ```
 
