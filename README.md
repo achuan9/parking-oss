@@ -33,3 +33,19 @@
 
 此命令已被移除，请通过 [react-app-rewired](https://github.com/timarney/react-app-rewired) 修改配置
 
+# 可能遇到的问题
+
+```bash
+The react-scripts package provided by Create React App requires a dependency:
+
+  "babel-eslint": "10.0.2"
+
+  ....
+
+```
+
+1. 移除 package-lock.json 或者 yarn.lock
+2. 移除 node_modules
+3. 移除 package.json 里边的 eslint-plugin-react-app 依赖项
+4. 重新安装依赖
+5. 再添加依赖 eslint-plugin-react-app

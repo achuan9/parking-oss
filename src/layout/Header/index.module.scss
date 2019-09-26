@@ -1,0 +1,17 @@
+$page-padding: 24px;
+
+.header {
+  background: #fff;
+}
+.header-right {
+  float: right;
+}
+.header-right-avatar-wrapper {
+  display: inline-block;
+  margin-left: 30px;
+  cursor: pointer;
+}
+.header-right-avatar {
+  margin-right: 10px;
+  background-color: #87d068;
+}

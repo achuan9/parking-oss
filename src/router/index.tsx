@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ROUTES } from './routes';
-import NotFound from 'pages/not-found';
-import { PageLoading } from 'components/PageLoading';
+import NotFound from '../pages/not-found';
+import { PageLoading } from '../components/PageLoading';
 import { IRoute } from "./index.interface";
 
 const getRoute = (route: IRoute) => {

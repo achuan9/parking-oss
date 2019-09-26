@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { ErrorInfo } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.less';
+
+import 'antd/dist/antd.css';
+import './App.css';
 import Login from './pages/User/Login';
 import Layout from './layout';
+import { notification } from 'antd';
 
-const App: React.FC = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/login" component={Login} />
-      <Route path="/" component={Layout} />
-    </Switch>
-  </BrowserRouter>
-);
+export default class App extends React.PureComponent {
+  componentDidCatch(error: Error, info: ErrorInfo) {
+    notification.error({
+      message: '系统错误',
+      description: info.componentStack,
+      duration: 5,
+    });
+  }
 
-export default App as any;
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <Route path="/" component={Layout} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+}
