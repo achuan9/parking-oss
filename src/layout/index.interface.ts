@@ -11,10 +11,6 @@ export interface IBaseLayoutState {
   collapsed: boolean;
 }
 
-
-
-export interface IBaseMenuProps extends RouteComponentProps {
+export interface IBaseSidebarProps extends RouteComponentProps {
   menu: IRoute[];
 }
-
-

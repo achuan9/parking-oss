@@ -6,7 +6,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "page": "node scripts/page.js",
+    "component": "node scripts/component.js"
   },
   "husky": {
     "hooks": {
@@ -17,6 +19,19 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write",
       "git add"
+    ]
+  },
+  "proxy": "http://gy.parking.vpclub.cn/webapi",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   },
   "dependencies": {
@@ -36,18 +51,7 @@
     "@types/react-router-dom": "^4.3.5",
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
+    "node-sass": "^4.12.0",
     "prettier": "^1.18.2"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
