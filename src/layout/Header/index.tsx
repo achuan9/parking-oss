@@ -1,20 +1,61 @@
+/// <reference path="screenfull.d.ts" />
 import React, { useState } from 'react';
+import screenfull from 'screenfull';
 import { Menu, Layout, Dropdown, Icon, Avatar, Badge } from 'antd';
 import style from './index.module.scss';
+import { ClickParam } from 'antd/lib/menu';
+import H from 'history';
+
 const { Header } = Layout;
 
 interface BaseHeaderProps {
   collapsed: boolean;
   username: string;
+  toggleSidebar: () => void;
+  history: H.History;
 }
 
 const BaseHeader: React.FC<BaseHeaderProps> = props => {
   const { collapsed, username = 'ADMIN' } = props;
+  const [isScreenFull, setIsScreenFull] = useState(!!window.sessionStorage.getItem('screenfull'));
   const badgeNum = 100;
-  const [isFullscreen] = useState(false);
+  const screen = [
+    {
+      text: '全屏',
+      icon: 'fullscreen',
+    },
+    {
+      text: '退出全屏',
+      icon: 'fullscreen-exit',
+    },
+  ];
+  const avatarMenuHandler = ({ key }: ClickParam) => {
+    if (key === 'edit') {
+      props.history.push('/user/password');
+    }
+    if (key === 'fullscreen') {
+      if (screenfull.isEnabled) {
+        screenfull.toggle();
+        setIsScreenFull(!isScreenFull);
+        window.sessionStorage.setItem('screenfull', `${!isScreenFull}`);
+      }
+    }
+    if (key === 'logout') {
+      // console.log(props);
+      const curPath = props.history.location.pathname;
+      props.history.push('/login', {
+        from: curPath,
+      });
+    }
+  };
+  const badgeMenuHandler = () => {
+    enum Paths {
+      edit = '/user/password',
+    }
+  };
 
   const BadgeMenu = (
-    <Menu>
+    <Menu onClick={badgeMenuHandler}>
       <Menu.Item disabled>
         共有
         <Badge count={badgeNum} />
@@ -45,16 +86,16 @@ const BaseHeader: React.FC<BaseHeaderProps> = props => {
   );
 
   const AvatarMenu = (
-    <Menu>
-      <Menu.Item>
+    <Menu onClick={avatarMenuHandler}>
+      <Menu.Item key="edit">
         <Icon type="edit" />
         修改密码
       </Menu.Item>
-      <Menu.Item>
-        <Icon type={isFullscreen ? 'fullscreen-exit' : 'fullscreen'} />
-        全屏
+      <Menu.Item key="fullscreen">
+        <Icon type={screen[Number(isScreenFull)]['icon']} />
+        {screen[Number(isScreenFull)]['text']}
       </Menu.Item>
-      <Menu.Item>
+      <Menu.Item key="logout">
         <Icon type="logout" />
         注销
       </Menu.Item>
@@ -63,7 +104,11 @@ const BaseHeader: React.FC<BaseHeaderProps> = props => {
 
   return (
     <Header className={style.header}>
-      <Icon className="trigger" type={collapsed ? 'menu-unfold' : 'menu-fold'} />
+      <Icon
+        className="trigger"
+        type={collapsed ? 'menu-unfold' : 'menu-fold'}
+        onClick={props.toggleSidebar}
+      />
       <div className={style['header-right']}>
         <Dropdown overlay={BadgeMenu} placement="bottomRight" key="badge-menu">
           <span className={style['header-right-avatar-wrapper']}>

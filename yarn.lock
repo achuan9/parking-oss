@@ -1324,6 +1324,13 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/screenfull@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.npm.taobao.org/@types/screenfull/download/@types/screenfull-4.1.0.tgz#e2f7bbb1d2c32c07e54908e47d00724b7515c2cb"
+  integrity sha1-4ve7sdLDLAflSQjkfQByS3UVwss=
+  dependencies:
+    screenfull "*"
+
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/@types/stack-utils/download/@types/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
@@ -10229,6 +10236,11 @@ schema-utils@^2.0.0, schema-utils@^2.0.1, schema-utils@^2.1.0:
   dependencies:
     ajv "^6.10.2"
     ajv-keywords "^3.4.1"
+
+screenfull@*, screenfull@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npm.taobao.org/screenfull/download/screenfull-5.0.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fscreenfull%2Fdownload%2Fscreenfull-5.0.0.tgz#5c2010c0e84fd4157bf852877698f90b8cbe96f6"
+  integrity sha1-XCAQwOhP1BV7+FKHdpj5C4y+lvY=
 
 scss-tokenizer@^0.2.3:
   version "0.2.3"
