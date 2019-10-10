@@ -1,20 +1,21 @@
 import { FormComponentProps } from 'antd/lib/form';
 import { RouteComponentProps } from 'react-router';
 
-export interface IVariables {
+export interface Variables {
   username: string;
   password: string;
 }
 
-export interface ILoginState {
+export interface LoginState {
   loading: boolean;
+  timestamp: number;
 }
 
-export interface IResponse {
+export interface Response {
   login: {
     lifeTime: number;
     token: string;
   };
 }
 
-export interface ILoginFormProps extends FormComponentProps, RouteComponentProps, IVariables {}
+export interface LoginFormProps extends FormComponentProps, RouteComponentProps, Variables {}
